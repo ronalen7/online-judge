@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
-    path('problems/', include('onlineJudge.urls')),
+    path('', include('authentication.urls')),
+    # path('', auth_views.LoginView.as_view(), name='login'),
+    path('problems/', include('onlineJudge.urls', 'onlineJudge')),
     path('admin/', admin.site.urls),
 ]
