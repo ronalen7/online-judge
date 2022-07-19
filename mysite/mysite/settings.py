@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# LOGIN_REDIRECT_URL = 'onlineJudge:index'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'onlineJudge', # can also write 'onlineJudge.apps.OnlinejudgeConfig',
+    'authentication',
+    'onlineJudge',  # can also write 'onlineJudge.apps.OnlinejudgeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'E:\Placement Material\project5-Online Judge\mysite\authentication\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
